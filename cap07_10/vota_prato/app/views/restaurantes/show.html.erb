@@ -15,5 +15,7 @@
   <%= @restaurante.especialidade %>
 </p>
 
+<%= link_to 'Qualifique', controller: "qualificacoes", action: "new", restaurante: @restaurante %>
+
 <%= link_to 'Editar', action: 'edit', id: @restaurante%>
 <%= link_to 'Voltar', action: 'index'%>
