@@ -14,6 +14,7 @@ class QualificacoesController < ApplicationController
 
   # GET /qualificacoes/new
   def new
+    preparar_form
     @qualificacao = Qualificacao.new
 
     if params[:cliente]

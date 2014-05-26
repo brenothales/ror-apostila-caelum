@@ -15,6 +15,9 @@
   <%= @restaurante.especialidade %>
 </p>
 
+<%= comentarios @restaurante %>
+<%= novo_comentario @restaurante %>
+
 <b>Nota média: </b>
   <%= @restaurante.qualificacoes.average(:nota) %> <br/>
 <b>Qualificações: </b>
