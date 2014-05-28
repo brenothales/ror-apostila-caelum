@@ -1,11 +1,12 @@
 VotaPrato::Application.routes.draw do
   resources :comentarios
-
   resources :restaurantes
   resources :qualificacoes
   resources :clientes
 
   match 'ola' => 'ola_mundo#index', via: 'get'
+
+  get 'busca/:nome' => 'restaurantes#busca'
 
 
 end

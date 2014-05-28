@@ -57,4 +57,14 @@ class RestaurantesController < ApplicationController
   def restaurante_params
     params.require(:restaurante).permit(:nome, :endereco, :especialidade, :foto)
   end
+
+  def busca
+    @restaurante = Restaurante.find_by_nome(params[:nome])
+    if @restaurante
+      redirect_to :action => 'show', :id => @restaurante.id
+    else
+      flash[:notice] = 'Restaurante não encontrado.'
+      redirect_to  :action => 'index'
+    end
+  end
 end
