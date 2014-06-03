@@ -8,6 +8,8 @@ VotaPrato::Application.routes.draw do
 
   get 'busca/:nome' => 'restaurantes#busca'
 
+  match 'rack', via: 'get',
+    :to => proc{|env| [200, {"Content-Type" => "text/html"},["App Rack numa rota Rails"]]}
 
 end
 
